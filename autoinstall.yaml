@@ -1,0 +1,41 @@
+#cloud-config
+autoinstall:
+    version: 1
+    identity:
+        realname: "Informática"
+        hostname: "info-autoinstall"
+        username: "informatica"
+        password: "$6$lzQmLK6ewdUtx5Og$/w4rdfeZkDo7bJnxRXcQYg21TicEbVK.YLNP9cbI4s/8v7alVveA2LpNLv0hVl0XooayF0GhdWdR.OJjGGgIB0"
+        sudo: "ALL=(ALL:ALL) ALL"
+    locale: "pt_BR.UTF-8"
+    keyboard:
+        layout: "br"
+        variant: "abnt2"
+    timezone: "America/Sao_Paulo"
+    storage:
+        layout:
+            name: "direct"
+    apt:
+        proxy: "http://environment:environment@10.3.139.126:3128"
+    packages:
+        - ubuntu-desktop
+        - gnome-session-flashback
+        - gnome-flashback-common
+        - ubuntu-restricted-extras
+        - net-tools
+        - smbclient
+        - cifs-utils
+        - vlc
+        - k3b
+        - pidgin
+        - exfat-fuse
+        - exfatprogs
+        - hplip
+        - hplip-gui
+        - openssh-server
+    codecs:
+    	install: "true"
+    drivers: 
+    	install: "true"
+    updates: "all" 
+    shutdown: "reboot"
